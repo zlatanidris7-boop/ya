@@ -1,0 +1,186 @@
+  :root {
+  --u: calc(min(100vw, 390px) / 270);
+ 
+  --bg-frame: #c8c8c8;
+  --bg-bar:   #8d8d8d;
+  --merah:    #a30000;
+  --teks:     #111111;
+  --putih:    #ffffff;
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  min-height: 100vh;
+  background: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  color: var(--teks);
+}
+ 
+/* ---------- Frame utama ---------- */
+.frame {
+  position: relative;
+  width: calc(var(--u) * 270);
+  height: calc(var(--u) * 631);
+  background: var(--bg-frame);
+  overflow: hidden;
+}
+ 
+/* ---------- Bar atas ---------- */
+.topbar {
+  position: absolute;
+  top: calc(var(--u) * 8);
+  left: calc(var(--u) * 11);
+  width: calc(var(--u) * 248);
+  height: calc(var(--u) * 15);
+  background: var(--bg-bar);
+  border-radius: calc(var(--u) * 4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 calc(var(--u) * 4);
+}
+ 
+.dots {
+  display: flex;
+  gap: calc(var(--u) * 2);
+}
+ 
+.dot {
+  width: calc(var(--u) * 11);
+  height: calc(var(--u) * 11);
+  background: var(--putih);
+  border-radius: 50%;
+}
+ 
+.signature {
+  font-family: "Caveat", cursive;
+  font-size: calc(var(--u) * 12);
+  line-height: 1;
+  color: var(--teks);
+}
+ 
+/* ---------- Teks ---------- */
+.title,
+.tagline,
+.caption {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  line-height: calc(var(--u) * 10);
+}
+ 
+.title {
+  top: calc(var(--u) * 42);
+  font-size: calc(var(--u) * 7);
+}
+ 
+.tagline {
+  top: calc(var(--u) * 337);
+  font-size: calc(var(--u) * 7);
+}
+ 
+.caption {
+  top: calc(var(--u) * 357);
+  font-size: calc(var(--u) * 6);
+}
+ 
+/* ---------- Tiga potongan foto kamar ----------
+   Satu foto (img/kamar.jpg) dipotong jadi tiga bagian.
+   Rasio foto sebaiknya 188 : 245.
+   ------------------------------------------------ */
+.strip {
+  position: absolute;
+  top: calc(var(--u) * 83);
+  width: calc(var(--u) * 44);
+  height: calc(var(--u) * 245);
+  background-color: #b5b5b5;
+  background-image: url("img/kamar.jpg");
+  background-repeat: no-repeat;
+  background-size: calc(var(--u) * 188) calc(var(--u) * 245);
+}
+ 
+.strip-1 {
+  left: calc(var(--u) * 41);
+  background-position: 0 0;
+}
+ 
+.strip-2 {
+  left: calc(var(--u) * 113);
+  background-position: calc(var(--u) * -72) 0;
+}
+ 
+.strip-3 {
+  left: calc(var(--u) * 185);
+  background-position: calc(var(--u) * -144) 0;
+}
+ 
+/* ---------- Dua foto kecil ---------- */
+.item {
+  position: absolute;
+  object-fit: cover;
+  background: #b5b5b5;
+  border-radius: calc(var(--u) * 4);
+}
+ 
+.item-pouf {
+  left: calc(var(--u) * 144);
+  top: calc(var(--u) * 380);
+  width: calc(var(--u) * 53);
+  height: calc(var(--u) * 51);
+}
+ 
+.item-sofa {
+  left: calc(var(--u) * 73);
+  top: calc(var(--u) * 431);
+  width: calc(var(--u) * 54);
+  height: calc(var(--u) * 50);
+}
+ 
+/* ---------- Kotak kontak ---------- */
+.contact {
+  position: absolute;
+  left: calc(var(--u) * 5);
+  top: calc(var(--u) * 556);
+  width: calc(var(--u) * 261);
+  height: calc(var(--u) * 70);
+  background: var(--merah);
+  border-radius: calc(var(--u) * 8);
+  color: var(--putih);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: calc(var(--u) * 2);
+}
+ 
+.contact-title {
+  font-family: "Courier Prime", monospace;
+  font-size: calc(var(--u) * 7);
+  line-height: calc(var(--u) * 10);
+}
+ 
+.ig {
+  display: block;
+  width: calc(var(--u) * 27);
+  height: calc(var(--u) * 27);
+  margin-top: calc(var(--u) * 11);
+}
+ 
+.ig svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+ 
+.handle {
+  margin-top: calc(var(--u) * 5);
+  font-size: calc(var(--u) * 7);
+  line-height: calc(var(--u) * 10);
+}
